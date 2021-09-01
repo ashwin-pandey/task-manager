@@ -12,10 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 
 /* ROUTE HANDLERS */
 /* LIST ROUTES */
-app.use('/lists', ListRoutes);
+app.use('/', ListRoutes);
 
 /* TASK ROUTES */
-app.use('/lists/:listId/tasks', TaskRoutes);
+app.use('/', TaskRoutes);
 
 
 app.listen(port, () => {

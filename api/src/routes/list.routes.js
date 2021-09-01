@@ -6,7 +6,7 @@ const { List } = require('../models');
  * GET /lists
  * Purpose: Get all lists
  */
-router.get('/', (req, res) => {
+router.get('/lists', (req, res) => {
     // Return an array of all the lists in the database.
     List.find({}, (error, lists) => {
         if (error) {
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
  * POST /lists
  * Purpose: Create a list
  */
-router.post('/', (req, res) => {
+router.post('/lists', (req, res) => {
     // Create a new list and return the new lists record (which includes the id).
     // The list information (fields) will be passed in via the JSON request body.
     List.create(req.body, (error, list) => {
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
  * PATCH /lists/:id
  * Purpose: Update a specified list
  */
-router.patch('/:id', (req, res) => {
+router.patch('/lists/:id', (req, res) => {
     // Update the specified list with the new values specified in the JSON body.
     List.findOneAndUpdate({ _id: req.params.id }, {
         $set: req.body
@@ -53,7 +53,7 @@ router.patch('/:id', (req, res) => {
  * DELETE /lists/:id
  * Purpose: Delete the specified list
  */
-router.delete('/:id', (req, res) =>  {
+router.delete('/lists/:id', (req, res) =>  {
     // Delete the specified list
     List.findOneAndRemove({ _id: req.params.id }, (error, removedList) => {
         res.sendStatus(204).json({
