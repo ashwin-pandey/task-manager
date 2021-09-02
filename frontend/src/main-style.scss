@@ -29,3 +29,20 @@ html {
 html, body {
     height: 100%;
 }
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-box {
+    min-height: 180px;
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 5px;
+    padding: 2%;
+}
