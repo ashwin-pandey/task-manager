@@ -1,13 +1,17 @@
 const dotenv = require('dotenv');
+const path = require('path');
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 // console.log(`port = ${port}`);
-const mongoURI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI;
 // console.log(`mongo url = ${mongoURI}`);
+const FRONT_END_URI = process.env.FRONT_END_URI;
+// console.log(`frontend url = ${frontEndUri}`);
 
 module.exports = {
-    port,
-    mongoURI
+    PORT,
+    MONGO_URI,
+    FRONT_END_URI   
 }

@@ -27,9 +27,7 @@ router.post('/lists', (req, res) => {
         if (error) {
             console.log(error);
         }
-        res.sendStatus(201).json({
-            message: "Created successfully",
-            list});
+        res.send(list);
     });
 });
 

@@ -66,7 +66,7 @@ router.patch('/lists/:listId/tasks/:taskId', (req, res) => {
         if (error) {
             console.log(error.message);
         }
-        res.sendStatus(200);
+        res.send({message: 'Updated successfully!'});
     });
 });
 
